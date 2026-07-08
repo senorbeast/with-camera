@@ -800,6 +800,17 @@
     micromatch "^4.0.4"
     walker "^1.0.8"
 
+"@expo/metro-runtime@~57.0.3":
+  version "57.0.3"
+  resolved "https://registry.yarnpkg.com/@expo/metro-runtime/-/metro-runtime-57.0.3.tgz#af751673bc854aa5e24ecaf4a16240bd6fd41857"
+  integrity sha512-FMXIpvPIlAvJlaQmlmP79gNt7KS5DyruKSOkOW1DTkXnJOiXQnzvebqPLOEYH71fbS1emJ3Dq45lDz7+sryVbA==
+  dependencies:
+    "@expo/log-box" "^57.0.0"
+    anser "^1.4.9"
+    pretty-format "^29.7.0"
+    stacktrace-parser "^0.1.10"
+    whatwg-fetch "^3.0.0"
+
 "@expo/metro@~56.0.0":
   version "56.0.0"
   resolved "https://registry.yarnpkg.com/@expo/metro/-/metro-56.0.0.tgz#7ed3d4b2968123054223eae9b98918561f6f6128"

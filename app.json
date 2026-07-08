@@ -1,5 +1,13 @@
 {
-  "plugins": [
-    "expo-image"
-  ]
+  "expo": {
+    "name": "Camera Example",
+    "slug": "with-camera",
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-image"
+    ]
+  }
 }
