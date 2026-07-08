@@ -12,19 +12,23 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
         <View style={styles.navIcon}>
           <FontAwesome6 name="train-subway" size={24} color="#d9f99d" />
         </View>
-        <View>
+        <View style={styles.navCopy}>
           <Text style={styles.navLabel}>Current station</Text>
-          <Text style={styles.navTitle}>{stationName}</Text>
+          <Text style={styles.navTitle} numberOfLines={2}>
+            {stationName}
+          </Text>
         </View>
       </View>
 
-      <View style={styles.navGroup}>
+      <View style={[styles.navGroup, styles.navGroupDate]}>
         <View style={styles.navIcon}>
           <Ionicons name="calendar-clear-outline" size={24} color="#d9f99d" />
         </View>
-        <View>
+        <View style={styles.navCopy}>
           <Text style={styles.navLabel}>Today</Text>
-          <Text style={styles.navTitle}>{today}</Text>
+          <Text style={styles.navTitle} numberOfLines={2}>
+            {today}
+          </Text>
         </View>
       </View>
     </View>
