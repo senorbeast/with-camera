@@ -112,7 +112,7 @@ export function ScanScreen({ onTicketScanned, onCameraError }: ScanScreenProps) 
           label="Upload QR Image"
           variant="secondary"
           onPress={handleImageUpload}
-          icon={<Ionicons name="image-outline" size={30} color="#0f172a" />}
+          icon={<Ionicons name="image-outline" size={26} color="#24262b" />}
         />
       </View>
     </View>

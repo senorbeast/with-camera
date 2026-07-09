@@ -9,7 +9,7 @@ export function HomeScreen({ onStart }: { onStart: () => void }) {
     <View style={styles.homeLayout}>
       <View style={styles.homeCopy}>
         <View style={styles.heroIcon}>
-          <MaterialCommunityIcons name="qrcode-scan" size={88} color="#0f766e" />
+          <MaterialCommunityIcons name="qrcode-scan" size={88} color="#f14136" />
         </View>
         <Text style={styles.homeTitle}>Ticket Scanner</Text>
         <Text style={styles.homeSubtitle}>Ready for passenger QR verification.</Text>
@@ -18,7 +18,7 @@ export function HomeScreen({ onStart }: { onStart: () => void }) {
       <PrimaryButton
         label="Scan Now"
         onPress={onStart}
-        icon={<MaterialCommunityIcons name="qrcode-scan" size={42} color="#ecfeff" />}
+        icon={<MaterialCommunityIcons name="qrcode-scan" size={28} color="#fff8f4" />}
       />
     </View>
   );

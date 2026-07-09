@@ -28,14 +28,14 @@ export function NoticeScreen({
   return (
     <View style={styles.noticeLayout}>
       <View style={[styles.noticeIcon, isError && styles.errorNoticeIcon]}>
-        <Ionicons name={iconName} size={84} color={isError ? "#dc2626" : "#0f766e"} />
+        <Ionicons name={iconName} size={84} color={isError ? "#dc2626" : "#f14136"} />
       </View>
       <Text style={styles.noticeTitle}>{title}</Text>
       <Text style={styles.noticeText}>{message}</Text>
       <PrimaryButton
         label={actionLabel}
         onPress={onAction}
-        icon={<Ionicons name={actionIconName} size={34} color="#ecfeff" />}
+        icon={<Ionicons name={actionIconName} size={28} color="#fff8f4" />}
       />
     </View>
   );

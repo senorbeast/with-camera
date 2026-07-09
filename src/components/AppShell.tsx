@@ -1,34 +1,105 @@
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { ReactNode } from "react";
-import { Text, View } from "react-native";
+import { Text, useWindowDimensions, View } from "react-native";
 
 import { styles } from "../styles";
 
-function TopNav({ stationName, today }: { stationName: string; today: string }) {
+function StatusItem({ label, value, active = false }: { label: string; value: string; active?: boolean }) {
   return (
-    <View style={styles.topNav}>
-      <View style={styles.navGroup}>
-        <View style={styles.navIcon}>
-          <FontAwesome6 name="train-subway" size={24} color="#d9f99d" />
+    <View style={styles.statusItem}>
+      {active && <View style={styles.statusDot} />}
+      <Text style={styles.statusLabel}>{label}</Text>
+      <Text style={styles.statusValue}>{value}</Text>
+    </View>
+  );
+}
+
+function TopNav({ stationName, today }: { stationName: string; today: string }) {
+  const { width } = useWindowDimensions();
+  const compact = width < 640;
+
+  if (compact) {
+    return (
+      <View>
+        <View style={styles.systemRail}>
+          <StatusItem label="VERSION" value="1.0.0" />
+          <StatusItem label="EQUIPMENT" value="100205" />
+          <StatusItem label="USER" value="N/A" />
+          <StatusItem label="SHIFT" value="32" />
+          <StatusItem label="PRINTER" value="C" active />
+          <StatusItem label="QR SCANNER" value="C" active />
         </View>
-        <View style={styles.navCopy}>
-          <Text style={styles.navLabel}>Current station</Text>
-          <Text style={styles.navTitle} numberOfLines={2}>
-            {stationName}
-          </Text>
+
+        <View style={[styles.topNav, styles.topNavCompact]}>
+          <View style={styles.compactMetaRow}>
+            <View style={styles.brandBlock}>
+              <Text style={styles.brandText}>NHLML</Text>
+            </View>
+
+            <View style={styles.logoBlock}>
+              <View style={styles.logoBadge}>
+                <Text style={styles.logoText}>Your Logo</Text>
+              </View>
+              <View style={styles.dateRow}>
+                <Ionicons name="calendar-clear-outline" size={14} color="#fff1ec" />
+                <Text style={styles.navDate} numberOfLines={1}>
+                  {today}
+                </Text>
+              </View>
+            </View>
+          </View>
+
+          <View style={[styles.stationBlock, styles.stationBlockCompact]}>
+            <Text style={styles.navLabel}>Station terminal</Text>
+            <View style={styles.stationTitleRow}>
+              <FontAwesome6 name="train-subway" size={18} color="#fff4ef" />
+              <Text style={[styles.navTitle, styles.navTitleCompact]} numberOfLines={2}>
+                {stationName}
+              </Text>
+            </View>
+          </View>
         </View>
       </View>
+    );
+  }
 
-      <View style={[styles.navGroup, styles.navGroupDate]}>
-        <View style={styles.navIcon}>
-          <Ionicons name="calendar-clear-outline" size={24} color="#d9f99d" />
+  return (
+    <View>
+      <View style={styles.systemRail}>
+        <StatusItem label="VERSION" value="1.0.0" />
+        <StatusItem label="EQUIPMENT" value="100205" />
+        <StatusItem label="USER" value="N/A" />
+        <StatusItem label="SHIFT" value="32" />
+        <StatusItem label="PRINTER" value="C" active />
+        <StatusItem label="QR SCANNER" value="C" active />
+      </View>
+
+      <View style={styles.topNav}>
+        <View style={styles.brandBlock}>
+          <Text style={styles.brandText}>NHLML</Text>
         </View>
-        <View style={styles.navCopy}>
-          <Text style={styles.navLabel}>Today</Text>
-          <Text style={styles.navTitle} numberOfLines={2}>
-            {today}
-          </Text>
+
+        <View style={styles.stationBlock}>
+          <Text style={styles.navLabel}>Station terminal</Text>
+          <View style={styles.stationTitleRow}>
+            <FontAwesome6 name="train-subway" size={20} color="#fff4ef" />
+            <Text style={styles.navTitle} numberOfLines={2}>
+              {stationName}
+            </Text>
+          </View>
+        </View>
+
+        <View style={styles.logoBlock}>
+          <View style={styles.logoBadge}>
+            <Text style={styles.logoText}>Your Logo</Text>
+          </View>
+          <View style={styles.dateRow}>
+            <Ionicons name="calendar-clear-outline" size={14} color="#fff1ec" />
+            <Text style={styles.navDate} numberOfLines={1}>
+              {today}
+            </Text>
+          </View>
         </View>
       </View>
     </View>
