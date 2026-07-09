@@ -34,6 +34,23 @@ This example shows how to take a picture and display it.
   - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
   - Web: Any web browser on [localhost or through HTTPS](https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts)
 
+## Deploy for web
+
+```bash
+yarn install --frozen-lockfile
+yarn build:web
+yarn preview:web
+```
+
+To deploy with Vercel:
+
+```bash
+npx vercel
+npx vercel --prod
+```
+
+Vercel uses `vercel.json` to run `yarn build:web` and publish the `dist` directory.
+
 ## 📝 Notes
 
 - Learn more about [Expo Camera](https://docs.expo.dev/versions/latest/sdk/camera).
