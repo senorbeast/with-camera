@@ -18,6 +18,7 @@ export function HomeScreen({ onStart }: { onStart: () => void }) {
       <PrimaryButton
         label="Scan Now"
         onPress={onStart}
+        buttonStyle={styles.scanNowButton}
         icon={<MaterialCommunityIcons name="qrcode-scan" size={28} color="#fff8f4" />}
       />
     </View>

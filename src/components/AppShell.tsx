@@ -6,6 +6,7 @@ import { Image, Text, useWindowDimensions, View } from "react-native";
 import { styles } from "../styles";
 
 const MMRCL_LOGO = require("../../assets/images/mmrcl_logo.png");
+const VISHWASAMUDRA_LOGO = require("../../assets/images/vishwasamudra_logo.png");
 
 function StatusItem({ label, value, active = false }: { label: string; value: string; active?: boolean }) {
   return (
@@ -42,7 +43,7 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
 
             <View style={styles.logoBlock}>
               <View style={styles.logoBadge}>
-                <Text style={styles.logoText}>Your Logo</Text>
+                <Image source={VISHWASAMUDRA_LOGO} style={styles.logoImage} resizeMode="contain" />
               </View>
               <View style={styles.dateRow}>
                 <Ionicons name="calendar-clear-outline" size={14} color="#fff1ec" />
@@ -54,7 +55,6 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
           </View>
 
           <View style={[styles.stationBlock, styles.stationBlockCompact]}>
-            <Text style={styles.navLabel}>Station terminal</Text>
             <View style={styles.stationTitleRow}>
               <FontAwesome6 name="train-subway" size={18} color="#fff4ef" />
               <Text style={[styles.navTitle, styles.navTitleCompact]} numberOfLines={2}>
@@ -85,7 +85,6 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
         </View>
 
         <View style={styles.stationBlock}>
-          <Text style={styles.navLabel}>Station terminal</Text>
           <View style={styles.stationTitleRow}>
             <FontAwesome6 name="train-subway" size={20} color="#fff4ef" />
             <Text style={styles.navTitle} numberOfLines={2}>
@@ -96,7 +95,7 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
 
         <View style={styles.logoBlock}>
           <View style={styles.logoBadge}>
-            <Text style={styles.logoText}>Your Logo</Text>
+            <Image source={VISHWASAMUDRA_LOGO} style={styles.logoImage} resizeMode="contain" />
           </View>
           <View style={styles.dateRow}>
             <Ionicons name="calendar-clear-outline" size={14} color="#fff1ec" />

@@ -1,1 +1,1 @@
-export const FALLBACK_STATION = "Varanasi";
+export const FALLBACK_STATION = "Girja Ghar";

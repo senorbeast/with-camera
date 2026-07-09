@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Pressable, Text } from "react-native";
+import { Pressable, Text, type StyleProp, type ViewStyle } from "react-native";
 
 import { styles } from "../styles";
 
@@ -8,9 +8,10 @@ type PrimaryButtonProps = {
   icon: ReactNode;
   onPress: () => void;
   variant?: "primary" | "secondary";
+  buttonStyle?: StyleProp<ViewStyle>;
 };
 
-export function PrimaryButton({ label, icon, onPress, variant = "primary" }: PrimaryButtonProps) {
+export function PrimaryButton({ label, icon, onPress, variant = "primary", buttonStyle }: PrimaryButtonProps) {
   return (
     <Pressable
       accessibilityRole="button"
@@ -18,6 +19,7 @@ export function PrimaryButton({ label, icon, onPress, variant = "primary" }: Pri
       style={({ pressed }) => [
         styles.button,
         variant === "secondary" && styles.secondaryButton,
+        buttonStyle,
         pressed && styles.buttonPressed,
       ]}
     >
