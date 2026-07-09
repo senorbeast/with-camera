@@ -1,1 +1,1 @@
-export const FALLBACK_STATION = "VARANASI CANTT RAILWAY STATION";
+export const FALLBACK_STATION = "Varanasi";

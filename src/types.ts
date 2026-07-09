@@ -11,4 +11,7 @@ export type ScanResult = {
   source?: string;
   destination?: string;
   rawPayload: string;
+  ticketHash?: string;
+  scanCount?: number;
+  usageMessage: string;
 };

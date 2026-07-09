@@ -1,9 +1,11 @@
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import type { ReactNode } from "react";
-import { Text, useWindowDimensions, View } from "react-native";
+import { Image, Text, useWindowDimensions, View } from "react-native";
 
 import { styles } from "../styles";
+
+const MMRCL_LOGO = require("../../assets/images/mmrcl_logo.png");
 
 function StatusItem({ label, value, active = false }: { label: string; value: string; active?: boolean }) {
   return (
@@ -25,7 +27,7 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
         <View style={styles.systemRail}>
           <StatusItem label="VERSION" value="1.0.0" />
           <StatusItem label="EQUIPMENT" value="100205" />
-          <StatusItem label="USER" value="N/A" />
+          {/* <StatusItem label="USER" value="N/A" /> */}
           <StatusItem label="SHIFT" value="32" />
           <StatusItem label="PRINTER" value="C" active />
           <StatusItem label="QR SCANNER" value="C" active />
@@ -34,6 +36,7 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
         <View style={[styles.topNav, styles.topNavCompact]}>
           <View style={styles.compactMetaRow}>
             <View style={styles.brandBlock}>
+              <Image source={MMRCL_LOGO} style={styles.brandLogo} resizeMode="contain" />
               <Text style={styles.brandText}>NHLML</Text>
             </View>
 
@@ -77,6 +80,7 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
 
       <View style={styles.topNav}>
         <View style={styles.brandBlock}>
+          <Image source={MMRCL_LOGO} style={styles.brandLogo} resizeMode="contain" />
           <Text style={styles.brandText}>NHLML</Text>
         </View>
 

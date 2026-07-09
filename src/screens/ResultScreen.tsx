@@ -9,6 +9,7 @@ export function ResultScreen({ result, onRetry }: { result: ScanResult; onRetry:
   const route =
     result.source && result.destination ? `${result.source} -> ${result.destination}` : "Route unavailable";
   const isValid = result.isValid;
+  const subtitle = result.scanCount ? `Ticket scan #${result.scanCount}` : "Manual Review";
 
   return (
     <View style={[styles.resultLayout, isValid ? styles.validResult : styles.invalidResult]}>
@@ -22,9 +23,9 @@ export function ResultScreen({ result, onRetry }: { result: ScanResult; onRetry:
 
       <View style={styles.resultCopy}>
         <Text style={[styles.resultTitle, isValid ? styles.validText : styles.invalidText]}>
-          {isValid ? "Ticket Valid" : "Invalid Ticket"}
+          {result.usageMessage}
         </Text>
-        <Text style={styles.resultSubtitle}>{isValid ? "Admit Passenger" : "Manual Review"}</Text>
+        <Text style={styles.resultSubtitle}>{subtitle}</Text>
         <Text style={styles.routeText}>{route}</Text>
       </View>
 

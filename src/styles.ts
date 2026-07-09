@@ -93,6 +93,12 @@ export const styles = StyleSheet.create({
   },
   brandBlock: {
     minWidth: 92,
+    alignItems: "center",
+    gap: 4,
+  },
+  brandLogo: {
+    width: 80,
+    height: 50,
   },
   brandText: {
     color: colors.cream,
@@ -449,7 +455,6 @@ export const styles = StyleSheet.create({
     lineHeight: 50,
     fontWeight: "900",
     textAlign: "center",
-    textTransform: "uppercase",
   },
   validText: {
     color: "#158052",

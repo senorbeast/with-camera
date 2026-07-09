@@ -28,17 +28,24 @@ export function ScanScreen({ onTicketScanned, onCameraError }: ScanScreenProps) 
     };
   }, []);
 
-  const handleDetectedPayload = (rawPayload: string) => {
+  const handleDetectedPayload = async (rawPayload: string) => {
     if (hasScanned.current) {
       return;
     }
 
     hasScanned.current = true;
-    onTicketScanned(parseTicketPayload(rawPayload));
+    setScanMessage("Checking ticket usage...");
+
+    try {
+      onTicketScanned(await parseTicketPayload(rawPayload));
+    } catch {
+      hasScanned.current = false;
+      setScanMessage("Could not check ticket usage. Try again.");
+    }
   };
 
   const handleBarcodeScanned = (event: BarcodeScanningResult) => {
-    handleDetectedPayload(event.data);
+    void handleDetectedPayload(event.data);
   };
 
   const handleImageUpload = async () => {
@@ -69,7 +76,7 @@ export function ScanScreen({ onTicketScanned, onCameraError }: ScanScreenProps) 
           return;
         }
 
-        handleDetectedPayload(qrScan.data);
+        await handleDetectedPayload(qrScan.data);
       } catch {
         setScanMessage("Could not read QR image. Try camera scan or a clearer PNG.");
       }
