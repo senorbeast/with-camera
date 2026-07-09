@@ -18,7 +18,7 @@ export async function parseTicketPayload(rawPayload: string): Promise<ScanResult
       return {
         isValid: false,
         rawPayload,
-        usageMessage: "Invalid Ticket",
+        usageMessage: "Invalid QR Code Ticket",
       };
     }
 
@@ -37,13 +37,13 @@ export async function parseTicketPayload(rawPayload: string): Promise<ScanResult
       rawPayload,
       ticketHash,
       scanCount,
-      usageMessage: hasExplicitValidity && !isPayloadValid ? "Invalid Ticket" : getTicketUsageMessage(scanCount),
+      usageMessage: hasExplicitValidity && !isPayloadValid ? "Invalid QR Code Ticket" : getTicketUsageMessage(scanCount),
     };
   } catch {
     return {
       isValid: false,
       rawPayload,
-      usageMessage: "Invalid Ticket",
+      usageMessage: "Invalid QR Code Ticket",
     };
   }
 }

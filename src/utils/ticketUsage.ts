@@ -112,12 +112,12 @@ export function incrementTicketScanCount(ticketHash: string) {
 
 export function getTicketUsageMessage(scanCount: number) {
   if (scanCount === 1) {
-    return "Welcome, You can enter";
+    return "Thank You! You can Enter";
   }
 
   if (scanCount === 2) {
-    return "Thank you, for travelling";
+    return "Thank You! You can Exit";
   }
 
-  return "Ticket is already used";
+  return "Invalid QR Code Ticket";
 }

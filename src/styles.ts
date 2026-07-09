@@ -456,67 +456,74 @@ export const styles = StyleSheet.create({
     margin: 16,
     borderRadius: 8,
     borderWidth: 1,
+    backgroundColor: colors.paper,
     alignItems: "center",
     justifyContent: "center",
-    gap: 22,
-    padding: 20,
+    gap: 20,
+    paddingHorizontal: 22,
+    paddingVertical: 26,
     boxShadow: "0 8px 18px rgba(0, 0, 0, 0.06)",
     elevation: 2,
   },
-  validResult: {
-    backgroundColor: colors.paper,
+  enterResult: {
     borderColor: "#bfead7",
+  },
+  exitResult: {
+    borderColor: "#ffd7a8",
   },
   invalidResult: {
-    backgroundColor: colors.paper,
     borderColor: "#f7bfba",
   },
-  resultIcon: {
-    width: 154,
-    height: 154,
-    borderRadius: 8,
+  resultNoticeRow: {
+    width: "100%",
+    maxWidth: 620,
+    flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: colors.paper,
-    borderWidth: 1,
+    gap: 24,
   },
-  validIcon: {
-    borderColor: "#bfead7",
-    backgroundColor: "#f1fbf6",
-  },
-  invalidIcon: {
-    borderColor: "#f7bfba",
-    backgroundColor: "#fff1f0",
+  resultIcon: {
+    width: 146,
+    height: 146,
+    alignItems: "center",
+    justifyContent: "center",
+    flexShrink: 0,
   },
   resultCopy: {
+    flex: 1,
+    minWidth: 0,
     alignItems: "center",
-    gap: 8,
+    gap: 4,
   },
   resultTitle: {
-    fontSize: 42,
-    lineHeight: 50,
+    fontSize: 38,
+    lineHeight: 45,
     fontWeight: "900",
     textAlign: "center",
+    flexShrink: 1,
   },
-  validText: {
+  resultMessage: {
+    fontSize: 34,
+    lineHeight: 41,
+    fontWeight: "900",
+    textAlign: "center",
+    flexShrink: 1,
+  },
+  enterResultText: {
     color: "#158052",
   },
-  invalidText: {
+  exitResultText: {
+    color: "#df8a13",
+  },
+  invalidResultText: {
     color: colors.redDark,
   },
-  resultSubtitle: {
-    color: colors.ink,
-    fontSize: 24,
-    lineHeight: 31,
-    fontWeight: "900",
-    textAlign: "center",
-    textTransform: "uppercase",
-  },
-  routeText: {
-    color: colors.muted,
-    fontSize: 18,
-    lineHeight: 26,
+  resultRetryText: {
+    color: colors.faint,
+    fontSize: 12,
+    lineHeight: 16,
     fontWeight: "800",
     textAlign: "center",
+    textTransform: "uppercase",
   },
 });
