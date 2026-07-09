@@ -16,8 +16,8 @@ type ResultNoticeState = {
 function getResultNoticeState(result: ScanResult): ResultNoticeState {
   if (result.isValid && result.scanCount === 1) {
     return {
-      title: "Thank You!",
-      message: "You can Enter",
+      title: "Welcome!",
+      message: "Please Enter",
       iconName: "arrow-up-circle",
       iconColor: "#00bf13",
       textStyle: styles.enterResultText,
@@ -28,7 +28,7 @@ function getResultNoticeState(result: ScanResult): ResultNoticeState {
   if (result.isValid && result.scanCount === 2) {
     return {
       title: "Thank You!",
-      message: "You can Exit",
+      message: "Please Exit",
       iconName: "arrow-up-circle",
       iconColor: "#00bf13",
       textStyle: styles.exitResultText,
