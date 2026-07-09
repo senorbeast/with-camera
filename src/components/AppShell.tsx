@@ -72,9 +72,9 @@ function TopNav({ stationName, today }: { stationName: string; today: string }) 
       <View style={styles.systemRail}>
         <StatusItem label="VERSION" value="1.0.0" />
         <StatusItem label="EQUIPMENT" value="100205" />
-        <StatusItem label="USER" value="N/A" />
+        {/* <StatusItem label="USER" value="N/A" />
         <StatusItem label="SHIFT" value="32" />
-        <StatusItem label="PRINTER" value="C" active />
+        <StatusItem label="PRINTER" value="C" active /> */}
         <StatusItem label="QR SCANNER" value="C" active />
       </View>
 
